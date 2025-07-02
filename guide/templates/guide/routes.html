@@ -1,0 +1,80 @@
+{% extends "guide/base.html" %}
+{% load static %}
+{% block content %}
+<script>document.body.classList.add('routes-page');</script>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: #444;
+  }
+  main {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+  }
+  .middleearth-svg {
+    width: 1920px;
+    height: 1080px;
+    display: block;
+    margin: 0 auto;
+    background: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  @media (max-width: 1920px) {
+    .middleearth-svg {
+      width: 100vw;
+      height: auto;
+    }
+  }
+  @media (max-width: 1080px) {
+    .middleearth-svg {
+      height: 100vh;
+      width: auto;
+    }
+  }
+  .map-popover {
+    position: absolute;
+    z-index: 10;
+    background: rgba(30,30,30,0.97);
+    color: #ffe066;
+    border: 2px solid #ffe066;
+    border-radius: 8px;
+    padding: 1rem;
+    pointer-events: none;
+    min-width: 200px;
+    max-width: 350px;
+    font-size: 1.1rem;
+    display: none;
+  }
+  .map-route {
+    stroke: #ffe066;
+    stroke-width: 5;
+    fill: none;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .map-route:hover {
+    opacity: 1;
+    stroke: #ff9800;
+    stroke-width: 7;
+  }
+  .map-place {
+    cursor: pointer;
+    transition: r 0.2s;
+  }
+  .map-place:hover {
+    r: 36;
+    fill: #ffe066;
+  }
+</style>
+{% include "guide/middleearth_map_interactive.svg" %}
+<div id="map-popover" class="map-popover"></div>
+<script src="{% static 'guide/js/map_interactive.js' %}"></script>
+{% endblock %} 

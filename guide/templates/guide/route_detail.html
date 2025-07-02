@@ -1,0 +1,8 @@
+{% extends "guide/base.html" %}
+{% block content %}
+<div class="container py-5">
+  <h2>{{ route.title }}</h2>
+  <p>{{ route.story|safe}}</p>
+  <a href="{% url 'guide:routes' %}" class="btn btn-outline-secondary mt-3">Назад к карте</a>
+</div>
+{% endblock %} 

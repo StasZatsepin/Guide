@@ -1,0 +1,55 @@
+<svg class="middleearth-svg" viewBox="0 0 3840 2160">
+  <image href="/static/guide/img/middleearth_map.svg" x="0" y="0" width="3840" height="2160"/>
+  <!-- Новые метки, увеличенные координаты -->
+  <circle id="shire" class="map-place" cx="940" cy="710" r="30" fill="#fff" data-title="The Shire" data-desc="Родина хоббитов."/>
+  <circle id="bree" class="map-place" cx="1110" cy="700" r="26" fill="#fff" data-title="Bree" data-desc="Город на тракте, встреча с Арагорном."/>
+  <circle id="rivendell" class="map-place" cx="1460" cy="540" r="30" fill="#fff" data-title="Rivendell" data-desc="Дом Элронда, убежище эльфов."/>
+  <circle id="moria" class="map-place" cx="1800" cy="820" r="30" fill="#fff" data-title="Moria" data-desc="Древние подземелья гномов."/>
+  <circle id="lothlorien" class="map-place" cx="2040" cy="840" r="30" fill="#fff" data-title="Lothlorien" data-desc="Волшебный лес Галадриэль."/>
+  <circle id="fangorn" class="map-place" cx="2100" cy="1080" r="26" fill="#fff" data-title="Fangorn" data-desc="Лес энтов."/>
+  <circle id="edoras" class="map-place" cx="2240" cy="1220" r="26" fill="#fff" data-title="Edoras" data-desc="Столица Рохана."/>
+  <circle id="helmsdeep" class="map-place" cx="2140" cy="1340" r="24" fill="#fff" data-title="Helm's Deep" data-desc="Крепость Рохана."/>
+  <circle id="isengard" class="map-place" cx="1980" cy="1240" r="26" fill="#fff" data-title="Isengard" data-desc="Башня Сарумана."/>
+  <circle id="minastirith" class="map-place" cx="2680" cy="1520" r="28" fill="#fff" data-title="Minas Tirith" data-desc="Столица Гондора."/>
+  <circle id="osgiliath" class="map-place" cx="2560" cy="1480" r="24" fill="#fff" data-title="Osgiliath" data-desc="Город на Андуине."/>
+  <circle id="deadmarshes" class="map-place" cx="2880" cy="1260" r="24" fill="#fff" data-title="Dead Marshes" data-desc="Мёртвые топи."/>
+  <circle id="baraddur" class="map-place" cx="2890" cy="1230" r="26" fill="#fff" data-title="Barad-dûr" data-desc="Крепость Саурона."/>
+  <circle id="mountdoom" class="map-place" cx="3060" cy="1340" r="24" fill="#fff" data-title="Mount Doom" data-desc="Ородруин, Гора Судьбы."/>
+  <circle id="greyhavens" class="map-place" cx="640" cy="660" r="26" fill="#fff" data-title="Grey Havens" data-desc="Порт эльфов на Запад."/>
+  <circle id="erebor" class="map-place" cx="3080" cy="400" r="26" fill="#fff" data-title="Erebor" data-desc="Одинокая гора, королевство гномов."/>
+  <circle id="lake-town" class="map-place" cx="3020" cy="500" r="22" fill="#fff" data-title="Lake-town" data-desc="Город на озере у Эребора."/>
+  <circle id="dolamroth" class="map-place" cx="2400" cy="1940" r="22" fill="#fff" data-title="Dol Amroth" data-desc="Портовый город Гондора."/>
+  <circle id="pelargir" class="map-place" cx="2600" cy="1860" r="22" fill="#fff" data-title="Pelargir" data-desc="Порт Гондора на Андуине."/>
+  <circle id="umbar" class="map-place" cx="1800" cy="2120" r="26" fill="#fff" data-title="Umbar" data-desc="Город-крепость пиратов."/>
+  <circle id="angmar" class="map-place" cx="1400" cy="240" r="26" fill="#fff" data-title="Angmar" data-desc="Королевство Короля-Чародея."/>
+  <circle id="mirkwood" class="map-place" cx="2400" cy="540" r="30" fill="#fff" data-title="Mirkwood" data-desc="Мглистый лес, дом Леголаса."/>
+  <circle id="lorien" class="map-place" cx="2040" cy="840" r="24" fill="#fff" data-title="Lorien" data-desc="Лес Галадриэль."/>
+  <circle id="rohan" class="map-place" cx="2200" cy="1240" r="26" fill="#fff" data-title="Rohan" data-desc="Королевство всадников."/>
+  <circle id="gondor" class="map-place" cx="2600" cy="1640" r="30" fill="#fff" data-title="Gondor" data-desc="Великая страна людей."/>
+  <circle id="mordor" class="map-place" cx="2920" cy="1400" r="34" fill="#fff" data-title="Mordor" data-desc="Земля Тьмы."/>
+  <!-- Обновлённые маршруты (координаты x2) -->
+  <polyline id="route-fellowship" class="map-route"
+    points="940,710 1110,700 1460,540 1800,820 2040,840 2200,1240 2680,1520 2880,1260 2890,1230 3060,1340"
+    data-title="Путь Братства Кольца"
+    data-desc="Из Шира в Мордор через Бри, Ривенделл, Морию, Лотлориэн, Рохан, Гондор, Мёртвые топи, Барад-дур, Ородруин."
+    data-url="/routes/fellowship/"
+  />
+  <polyline id="route-thorin" class="map-route"
+    points="940,710 1110,700 1460,540 1800,820 2040,840 2400,540 3080,400 3020,500"
+    data-title="Путь Торина и компании"
+    data-desc="Из Шира к Одинокой горе через Бри, Ривенделл, Мглистые горы, Лориэн, Мирквуд, Эребор, Озёрный город."
+    data-url="/routes/thorin/"
+  />
+  <polyline id="route-aragorn" class="map-route"
+    points="2680,1520 2600,1860 1800,2120"
+    data-title="Путь Арагорна к Умбару"
+    data-desc="Путь Арагорна и армии мертвецов к Пеларгиру и Умбару."
+    data-url="/routes/aragorn/"
+  />
+  <polyline id="route-elves" class="map-route"
+    points="1460,540 940,710 640,660"
+    data-title="Путь эльфов на Запад"
+    data-desc="Путь эльфов из Ривенделла и Шира к Серым Гаваням."
+    data-url="/routes/elves/"
+  />
+</svg> 

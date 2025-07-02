@@ -1,0 +1,1 @@
+web: gunicorn gandalf_guide.wsgi:application --workers=2

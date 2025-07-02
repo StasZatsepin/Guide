@@ -1,0 +1,54 @@
+{% extends "guide/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card bg-secondary bg-opacity-10 border-0 shadow-sm">
+                <div class="card-body text-center">
+                    <h2 class="card-title mb-4">
+                        <i class="bi bi-exclamation-triangle text-warning"></i>
+                        Подтверждение удаления
+                    </h2>
+                    
+                    <div class="alert alert-warning" role="alert">
+                        <h5>Вы уверены, что хотите удалить запись?</h5>
+                        <p class="mb-0"><strong>"{{ object.title }}"</strong></p>
+                    </div>
+                    
+                    <div class="card bg-light mb-4">
+                        <div class="card-body">
+                            <h6>Информация о записи:</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>Место:</strong> {{ object.location }}</li>
+                                <li><strong>Категория:</strong> {{ object.get_category_display }}</li>
+                                <li><strong>Создано:</strong> {{ object.created_at|date:"d.m.Y H:i" }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                            <button type="submit" class="btn btn-danger me-md-2">
+                                <i class="bi bi-trash"></i> Удалить
+                            </button>
+                            <a href="{% url 'guide:post_detail' object.pk %}" class="btn btn-secondary">
+                                <i class="bi bi-x-circle"></i> Отмена
+                            </a>
+                        </div>
+                    </form>
+                    
+                    <div class="mt-4">
+                        <small class="text-muted">
+                            <i class="bi bi-info-circle"></i>
+                            Это действие нельзя отменить. Запись будет удалена навсегда.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

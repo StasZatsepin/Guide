@@ -1,0 +1,58 @@
+{% extends "guide/base.html" %}
+{% load static %}
+{% block content %}
+    <header>
+        <h1>🌟 Добро пожаловать в "Гэндальф гид"! 🌟</h1>
+    </header>
+
+    <p class="lead text-center">Приветствую вас, путник! Я Гэндальф Серый, и этот сайт станет вашим верным спутником в путешествиях по Средиземью.</p>
+    
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-10">
+            <div class="card bg-secondary bg-opacity-10 border-0 shadow-sm mb-4">
+                <div class="card-body">
+                    <p>Здесь вы найдёте мудрые советы, захватывающие истории и проверенные маршруты по самым удивительным местам мира Толкина.</p>
+                    <p>От величественных гор Мории до уютных хоббитских нор Шира, от древних руин Гондора до таинственных лесов Лотлориэна — каждый уголок Средиземья хранит свои секреты и легенды. Позвольте мне стать вашим проводником в этом волшебном мире!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+        <div class="col">
+            <div class="card h-100 text-bg-dark border-primary shadow">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-quote"></i> Цитаты Гэндальфа</h5>
+                    <p class="card-text">Мудрые и вдохновляющие высказывания великого мага для каждого путешественника.</p>
+                    <a href="{% url 'guide:quotes' %}" class="btn btn-outline-primary btn-sm">Читать цитаты</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-dark border-info shadow">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-book"></i> Записи Гэндальфа</h5>
+                    <p class="card-text">Мудрые советы, исторические факты и рассказы о магических местах Средиземья.</p>
+                    <a href="{% url 'guide:posts_list' %}" class="btn btn-outline-info btn-sm">Читать записи</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-dark border-warning shadow">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-map"></i> Маршруты</h5>
+                    <p class="card-text">Лучшие маршруты по местам "Властелина Колец" и советы для безопасного странствия.</p>
+                    <a href="{% url 'guide:routes' %}" class="btn btn-outline-warning">Смотреть все маршруты</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="img1 text-center mb-4">
+        <img src="{% static 'guide/img/gandalf_welcome.jpg' %}" alt="Гэндальф приветствует вас в Средиземье" class="img-fluid rounded shadow">
+    </div>
+
+    <div class="text-center" style="margin: 2rem 0; padding: 1.5rem; background: linear-gradient(135deg, rgba(214, 158, 46, 0.697), rgba(49, 130, 206, 0.493)); border-radius: 15px; border: 1px solid var(--gandalf-gold);">
+        <p class="fst-italic">"Мудрость приходит с опытом, а опыт — с путешествиями"</p>
+    </div>
+{% endblock %}

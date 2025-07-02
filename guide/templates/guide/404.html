@@ -1,0 +1,11 @@
+{% extends "guide/base.html" %}
+{% block content %}
+<div class="container py-5 text-center">
+    <h1 class="display-3 text-warning mb-4"><i class="bi bi-exclamation-triangle"></i> 404</h1>
+    <h2 class="mb-3">Страница не найдена</h2>
+    <p class="lead mb-4">К сожалению, такой записи не существует или она не опубликована.<br>
+    Попробуйте вернуться на <a href="{% url 'guide:posts_list' %}">страницу всех записей</a> или на <a href="{% url 'guide:index' %}">главную</a>.</p>
+    <div class="fst-italic text-secondary mb-4">"Даже самый мудрый не может предвидеть все последствия"</div>
+    <img src="{% static 'guide/img/gandalf_travel.webp' %}" alt="Гэндальф в пути" class="img-fluid rounded shadow" style="max-width: 350px;">
+</div>
+{% endblock %} 

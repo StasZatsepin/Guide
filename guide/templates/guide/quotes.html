@@ -1,0 +1,22 @@
+{% extends "guide/base.html" %}
+{% block content %}
+<h2 class="text-center mb-4">Цитаты Гэндальфа</h2>
+<ul class="list-group mb-5">
+    {% for quote in quotes %}
+        <li class="list-group-item">{{ quote }}</li>
+    {% endfor %}
+</ul>
+<h3 class="mt-5 mb-3">Роли Гэндальфа в книгах</h3>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    {% for role in roles %}
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{ role.title }}</h5>
+                <p class="card-text">{{ role.desc }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %} 

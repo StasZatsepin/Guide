@@ -1,0 +1,55 @@
+{% extends "guide/base.html" %}
+{% load static %}
+{% block content %}
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-7 col-md-9">
+            <div class="card shadow guide-card">
+                <div class="card-body">
+                    <h2 class="mb-4 card-title text-center">
+                        {% if form.instance.pk %}
+                            Редактировать запись
+                        {% else %}
+                            Добавить новую запись
+                        {% endif %}
+                    </h2>
+                    <div id="form-notification"></div>
+                    <form method="post" novalidate id="post-create-form">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="mb-3">
+                                {{ field.label_tag }}
+                                {{ field }}
+                                {% if field.help_text %}
+                                    <div class="form-text">{{ field.help_text }}</div>
+                                {% endif %}
+                                {% for error in field.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-magic">
+                                {% if form.instance.pk %}
+                                    <i class="bi bi-check-circle"></i> Сохранить изменения
+                                {% else %}
+                                    <i class="bi bi-plus-circle"></i> Создать запись
+                                {% endif %}
+                            </button>
+                            {% if form.instance.pk %}
+                                <a href="{% url 'guide:post_detail' form.instance.pk %}" class="btn btn-outline-secondary">
+                                    <i class="bi bi-x-circle"></i> Отмена
+                                </a>
+                            {% endif %}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'guide/js/posts_dynamic.js' %}"></script>
+{% endblock %} 
